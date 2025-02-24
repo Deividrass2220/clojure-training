@@ -1,6 +1,7 @@
 package com.example;
 
 import clojure.lang.AFunction;
+import clojure.lang.IPersistentMap;
 import clojure.lang.RT;
 import clojure.lang.Var;
 
@@ -10,6 +11,6 @@ public class Main {
         AFunction obj = (AFunction)hashMap.getRawRoot();
         Object result = obj.invoke("a", 1, "b", 2);
 
-        System.out.println(result.toString());
+        System.out.println(result.getClass().getName());
     }
 }
