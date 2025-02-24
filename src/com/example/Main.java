@@ -7,10 +7,14 @@ import clojure.lang.Var;
 
 public class Main {
     public static void main(String[] args) {
-        Var hashMap = RT.var("clojure.core", "hash-map");
-        AFunction obj = (AFunction)hashMap.getRawRoot();
-        Object result = obj.invoke("a", 1, "b", 2);
+        Var vvar = RT.var("clojure.core", "vector");
+        AFunction obj = (AFunction)vvar.getRawRoot();
+        Object result = obj.invoke(1, 2, 3);
 
-        System.out.println(result.getClass().getName());
+        Var mapvar = RT.var("clojure.core", "map");
+        AFunction mapfn = (AFunction)mapvar.getRawRoot();
+
+        //Object result2 = mapfn.invoke(???, result);
+        //System.out.println(result2.toString());
     }
 }
